@@ -4,7 +4,7 @@
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>{{post.user}}</strong> <small> {{ post.timestamp.toDateString() }}</small>
+            <strong>{{post.user.username}}</strong> <small> {{ new Date(post.timestamp).toLocaleString("en-US")}}</small>
             <br>
             {{post.message}}
           </p>

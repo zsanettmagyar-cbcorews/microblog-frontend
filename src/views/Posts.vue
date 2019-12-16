@@ -23,7 +23,8 @@
 
 <script>
 import Post from '@/components/Post.vue'
-import uuidv4 from 'uuid/v4'
+import axios from 'axios'
+import { mapGetters, mapState } from 'vuex'
 
 export default {
   name: 'posts',
@@ -33,38 +34,49 @@ export default {
   data: function () {
     return {
       message: '',
-      current_user: 'ldonley',
-      posts: [
-        {
-          id: 1,
-          user: 'ldonley',
-          message: 'Hello, this is a test message from KubeCon 2019',
-          timestamp: new Date()
-        },
-        {
-          id: 2,
-          user: 'morbo',
-          message: 'Morbo will now introduce tonight\'s candidates… PUNY HUMAN NUMBER ONE, PUNY HUMAN NUMBER TWO, and Morbo\'s good friend, Richard Nixon. I\'ll get my kit! Fry, you can\'t just sit here in the dark listening to classical music.',
-          timestamp: new Date()
-        },
-        {
-          id: 3,
-          user: 'zapp',
-          message: 'Bender! Ship! Stop bickering or I\'m going to come back there and change your opinions manually! Fatal. Fry! Stay back! He\'s too powerful! You can see how I lived before I met you. I am the man with no name, Zapp Brannigan!',
-          timestamp: new Date()
-        }
-      ]
+      posts: [],
+      errors: []
     }
   },
+  created () {
+    this.getPosts()
+  },
+  computed: {
+    ...mapGetters([
+      'isLoggedIn'
+    ]),
+    ...mapState([
+      'user'
+    ])
+  },
   methods: {
+    getPosts: function () {
+      axios.get(`//localhost:8000/posts/`)
+        .then(response => {
+          this.posts = response.data
+        })
+        .catch(error => {
+          this.errors.push(error)
+        })
+    },
     addPost: function () {
       if (this.message.length > 1 && this.message.length <= 140) {
-        this.posts.push({
-          id: uuidv4(),
-          user: this.current_user,
-          message: this.message,
-          timestamp: new Date()
+        axios.post(`//localhost:8000/posts/`, {
+          user: this.user.url,
+          message: this.message
+        }, {
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+          }
         })
+          .then(() => {
+            this.getPosts()
+            this.message = ''
+          })
+          .catch(e => {
+            this.errors.push(e)
+          })
       }
     }
   }
