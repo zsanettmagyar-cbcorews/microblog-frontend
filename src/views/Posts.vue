@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     getPosts: function () {
-      axios.get(`//localhost:8000/posts/`)
+      axios.get(`${process.env.VUE_APP_BASE_API_URL}/posts/`)
         .then(response => {
           this.posts = response.data
         })
@@ -61,7 +61,7 @@ export default {
     },
     addPost: function () {
       if (this.message.length > 1 && this.message.length <= 140) {
-        axios.post(`//localhost:8000/posts/`, {
+        axios.post(`${process.env.VUE_APP_BASE_API_URL}/posts/`, {
           user: this.user.url,
           message: this.message
         }, {

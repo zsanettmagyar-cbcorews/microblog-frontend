@@ -28,7 +28,7 @@ export default new Vuex.Store({
   actions: {
     login ({ commit, dispatch }, creds) {
       commit(LOGIN)
-      axios.post(`//localhost:8000/api/token/`, creds,
+      axios.post(`${process.env.VUE_APP_BASE_API_URL}/api/token/`, creds,
         {
           headers: {
             'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ export default new Vuex.Store({
         })
     },
     register ({ commit, dispatch }, creds) {
-      axios.post(`//localhost:8000/users/register/`, creds,
+      axios.post(`${process.env.VUE_APP_BASE_API_URL}/users/register/`, creds,
         {
           headers: {
             'Content-Type': 'application/json'
@@ -63,7 +63,7 @@ export default new Vuex.Store({
       commit(LOGOUT)
     },
     grabUser ({ commit }) {
-      axios.get(`//localhost:8000/users/me/`, {
+      axios.get(`${process.env.VUE_APP_BASE_API_URL}/users/me/`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

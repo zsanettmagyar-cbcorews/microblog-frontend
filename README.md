@@ -25,5 +25,8 @@ yarn test:unit
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Environmental configuration
+
+| Environment variable | Value | Description |
+| --- | --- | --- |
+| VUE_APP_BASE_API_URL | http://localhost:8000 | URL for the backend api |
