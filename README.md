@@ -1,5 +1,7 @@
 # microblog-frontend
 
+To be used in conjunction with [microblog-backend]
+
 ## Project setup
 ```
 yarn install
@@ -30,3 +32,4 @@ yarn lint
 | Environment variable | Value | Description |
 | --- | --- | --- |
 | VUE_APP_BASE_API_URL | http://localhost:8000 | URL for the backend api |
+| VUE_APP_ROLLOUT_KEY | YOUR_KEY_HERE | The API key for your Rollout environment |
