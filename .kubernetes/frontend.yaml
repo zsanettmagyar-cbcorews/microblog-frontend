@@ -48,7 +48,7 @@ spec:
   - host: REPLACE_HOSTNAME
     http:
       paths:
-      - path: REPLACE_PATH
+      - path: /REPLACE_PATH
         backend:
           serviceName: microblog-frontend-service
           servicePort: 80
