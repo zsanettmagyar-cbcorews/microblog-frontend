@@ -1,4 +1,7 @@
-FROM node:lts-alpine as build-stage
+ARG NODE_IMAGE=node:lts-alpine
+
+# build stage
+FROM $NODE_IMAGE as build-stage
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install
