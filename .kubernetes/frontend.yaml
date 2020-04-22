@@ -21,6 +21,8 @@ spec:
         env:
           - name: VUE_APP_BASE_API_URL
             value: microblog-backend-service
+      imagePullSecrets:
+      - name: nexuscred      
 ---
 apiVersion: "v1"
 kind: "Service"
