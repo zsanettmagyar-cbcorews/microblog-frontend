@@ -20,9 +20,7 @@ spec:
         image: REPLACE_IMAGE
         env:
           - name: VUE_APP_BASE_API_URL
-            value: http://staging.microblog-backend.v1.k8s.tel/
-      imagePullSecrets:
-        - name: nexuscred      
+            value: microblog-backend  
 ---
 apiVersion: "v1"
 kind: "Service"
