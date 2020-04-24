@@ -25,7 +25,7 @@ spec:
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "microblog-frontend-service-REPLACE_REPO_OWNER"
+  name: "microblog-frontend-REPLACE_REPO_OWNER"
   labels:
     app: "microblog-frontend"
 spec:
@@ -52,5 +52,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: "microblog-frontend-service-REPLACE_REPO_OWNER"
+          serviceName: "microblog-frontend-REPLACE_REPO_OWNER"
           servicePort: 80
