@@ -56,7 +56,6 @@
     "verbose": true,
     "reporters": [
       "default",
-      "text",
       "jest-junit"
     ]
   },
