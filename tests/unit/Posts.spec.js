@@ -2,7 +2,7 @@ import Posts from '@/views/Posts.vue'
 
 describe('Posts.vue', () => {
   it('has a created hook', () => {
-    expect(typeof Posts.created).toBe('function')
+    expect(typeof Posts.created).toBe('funcion')
   })
   it('sets the correct default data', () => {
     expect(typeof Posts.data).toBe('function')
