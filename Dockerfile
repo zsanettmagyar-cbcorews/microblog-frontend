@@ -4,6 +4,7 @@ ARG NODE_IMAGE=node:lts-alpine
 FROM $NODE_IMAGE as build-stage
 WORKDIR /app
 COPY package.json yarn.lock .env ./
+RUN yarn install
 COPY . .
 RUN yarn run build
 
