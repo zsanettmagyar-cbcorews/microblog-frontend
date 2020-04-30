@@ -1,5 +1,5 @@
 ARG NODE_IMAGE=node:lts-alpine
-ARG BUILD_MODE=
+ARG BUILD_MODE
 
 # build stage
 FROM $NODE_IMAGE as build-stage
