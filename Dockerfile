@@ -3,11 +3,12 @@ ARG BUILD_MODE
 
 # build stage
 FROM $NODE_IMAGE as build-stage
+ARG BUILD_MODE=build
 WORKDIR /app
 COPY package.json yarn.lock .env .env.production ./
 RUN yarn install
 COPY . .
-RUN yarn run build
+RUN yarn run $BUILD_MODE
 
 # production stage
 FROM nginx:stable-alpine as production-stage
