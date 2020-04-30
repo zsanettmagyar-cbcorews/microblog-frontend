@@ -4,16 +4,16 @@ kind: "Deployment"
 metadata:
   name: "microblog-frontend-REPLACE_REPO_OWNER"
   labels:
-    app: "microblog-frontend"
+    app: "microblog-frontend-REPLACE_REPO_OWNER"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: "microblog-frontend"
+      app: "microblog-frontend-REPLACE_REPO_OWNER"
   template:
     metadata:
       labels:
-        app: "microblog-frontend"
+        app: "microblog-frontend-REPLACE_REPO_OWNER"
     spec:
       containers:
       - name: "microblog-frontend"
@@ -27,14 +27,14 @@ kind: "Service"
 metadata:
   name: "microblog-frontend-REPLACE_REPO_OWNER"
   labels:
-    app: "microblog-frontend"
+    app: "microblog-frontend-REPLACE_REPO_OWNER"
 spec:
   ports:
   - protocol: "TCP"
     port: 80
     targetPort: 80
   selector:
-    app: "microblog-frontend"
+    app: "microblog-frontend-REPLACE_REPO_OWNER"
   type: "ClusterIP"
 ---
 apiVersion: extensions/v1beta1
@@ -44,7 +44,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: "nginx"
   labels:
-    app: "microblog-frontend"
+    app: "microblog-frontend-REPLACE_REPO_OWNER"
 spec:
   rules:
   - host: REPLACE_HOSTNAME
