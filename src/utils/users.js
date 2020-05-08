@@ -10,6 +10,12 @@ export const userList = [
     password: 'normaluser',
     company: 'generic co',
     beta_access: false
+  },
+  {
+    username: 'admin',
+    password: 'admin',
+    company: 'Cool guys',
+    betaAccess: true
   }
 ]
 

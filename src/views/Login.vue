@@ -27,6 +27,7 @@
         </div>
         <p><small><a @click="() => {username='normaluser'; password='normaluser'}">Normal user: normaluser/normaluser</a></small></p>
         <p><small><a @click="() => {username='betauser'; password='betauser'}">Beta user: betauser/betauser</a></small></p>
+        <p><small><a @click="() => {username='admin'; password='admin'}">Admin user: admin/admin</a></small></p>
       </form>
     </div>
   </div>
