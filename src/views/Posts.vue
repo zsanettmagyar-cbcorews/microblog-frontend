@@ -3,7 +3,7 @@
     <hr class="hr is-invisible">
     <div class="box">
 
-      <h1 class="title">Posts <span v-if="show_sidebar"> - Show sidebar!</span></h1>
+      <h1 class="title">Posts <span v-if="show_title"> - Show sidebar!</span></h1>
       <hr class="hr">
       <div class="columns" v-if="show_sidebar">
         <div class="box column is-three-quarters">
@@ -61,7 +61,8 @@ export default {
       posts: [],
       users: [],
       errors: [],
-      show_sidebar: Flags.sidebar.isEnabled()
+      show_sidebar: Flags.sidebar.isEnabled(),
+      show_title: Flags.title.isEnabled()
     }
   },
   created () {
