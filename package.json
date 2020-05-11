@@ -35,8 +35,8 @@
     "eslint-plugin-vue": "^5.0.0",
     "jest-junit": "^10.0.0",
     "vue-cli-plugin-buefy": "^0.3.7",
-    "vue-template-compiler": "^2.6.10",
-    "vue-jest": "^3.0.5"
+    "vue-jest": "^3.0.5",
+    "vue-template-compiler": "^2.6.10"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -45,16 +45,23 @@
       "vue"
     ],
     "moduleNameMapper": {
-          "^@/(.*)$": "<rootDir>/src/$1"
+      "^@/(.*)$": "<rootDir>/src/$1"
     },
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
     },
     "collectCoverage": true,
-    "collectCoverageFrom": ["**/*.{js,vue}", "!**/node_modules/**"],
-    "coverageReporters": ["text"],
-    "snapshotSerializers": ["<rootDir>/node_modules/jest-serializer-vue"],
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "text"
+    ],
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ],
     "verbose": true,
     "reporters": [
       "default",
