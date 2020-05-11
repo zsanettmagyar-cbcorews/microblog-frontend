@@ -49,6 +49,7 @@ export default {
       }).then(() => {
         this.$router.push('/')
       })
+      window.location.reload(false);
     }
   }
 }
